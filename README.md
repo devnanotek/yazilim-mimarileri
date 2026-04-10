@@ -1,6 +1,8 @@
 # 🎓 Yazılım Tasarım ve Mimarisi - Sınav Hazırlık Platformu
 
-Bu proje, Mardin Artuklu Üniversitesi Bilgisayar Programcılığı 1. Sınıf öğrencisi **İslam ERGÜN** tarafından, "Yazılım Mimarileri" dersi vize/final sınavlarına interaktif ve modern bir şekilde hazırlanmak amacıyla geliştirilmiştir. Ders sorumlusu **Merve Babaoğlu**'nun slaytları temel alınarak hazırlanmış olup, %100 güncel ve Endüstri Standartlarına göre "Fact-Checked" (Doğruluğu Kanıtlanmış) içerikler barındırır.
+Bu proje, Mardin Artuklu Üniversitesi Bilgisayar Programcılığı "Yazılım Mimarileri" dersi kapsamında, öğrencilerin vize ve final sınavlarına interaktif, modern ve verimli bir şekilde hazırlanmalarını sağlamak amacıyla **İslam ERGÜN** tarafından tasarlanmış ve geliştirilmiştir. 
+
+Platformun akademik altyapısı, dersin sorumlu akademisyeni **Öğr. Gör. Merve BABAOĞLU** tarafından sunulan eğitim materyalleri referans alınarak oluşturulmuştur. Bu doğrultuda, paylaşılan akademik veriler endüstri standartları gözetilerek doğrulanmış (Fact-Checked) ve teknoloji sektöründeki güncel pratiklerle harmanlanarak sistem içerisine entegre edilmiştir.
 
 ## 🚀 Proje Hakkında
 
