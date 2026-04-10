@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="İslam Ergün">
+<title>YMT312 — Sınav Testi</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-logo">YMT312 // SINAV TESTİ</span>
+    <a href="index.html" class="back-btn">← Çalışma Sayfası</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <span class="hero-tag">🧪 ÇOKTAN SEÇMELİ TEST · 35 SORU</span>
+  <h1>Yazılım Tasarım & Mimarisi<br>Sınav Hazırlık Testi</h1>
+  <p>PDF'deki konular ve hoca soruları dahil — Birleşik Süreç, Çevik Modeller, Scrum, IEEE 12207</p>
+</div>
+
+<div class="controls" id="top-controls">
+  <div style="font-size:.85rem;color:var(--dim)">Konuya göre filtrele:</div>
+  <div style="display:flex;flex-wrap:wrap;gap:.5rem">
+    <button class="filter-btn active" onclick="filterQuestions('all')">Tümü</button>
+    <button class="filter-btn" onclick="filterQuestions('up')">Birleşik Süreç</button>
+    <button class="filter-btn" onclick="filterQuestions('agile')">Çevik/Agile</button>
+    <button class="filter-btn" onclick="filterQuestions('scrum')">Scrum</button>
+    <button class="filter-btn" onclick="filterQuestions('models')">Yazılım Modelleri</button>
+    <button class="filter-btn" onclick="filterQuestions('ieee')">IEEE 12207</button>
+  </div>
+  <button class="btn btn-primary" onclick="startQuiz()">▶ Testi Başlat</button>
+</div>
+
+<div class="progress-wrap" id="progress-wrap" style="display:none">
+  <div class="progress-info">
+    <span id="progress-text">Soru 0 / 0</span>
+    <span id="progress-score">✅ 0 Doğru</span>
+  </div>
+  <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+</div>
+
+<div id="quiz-area"></div>
+
+<div class="controls" id="bottom-controls" style="display:none">
+  <button class="btn btn-danger" onclick="resetQuiz()">🔄 Sıfırla</button>
+  <button class="btn btn-success" onclick="showResults()">📊 Sonuçları Gör</button>
+</div>
+
+<div id="scoreboard">
+  <div class="score-grid">
+    <div><div class="score-item-num" id="sc-correct" style="color:var(--accent5)">0</div><div class="score-item-label">Doğru</div></div>
+    <div><div class="score-item-num" id="sc-wrong" style="color:var(--red)">0</div><div class="score-item-label">Yanlış</div></div>
+    <div><div class="score-item-num" id="sc-unanswered" style="color:var(--accent4)">0</div><div class="score-item-label">Boş</div></div>
+    <div><div class="score-item-num" id="sc-pct" style="color:var(--accent)">0%</div><div class="score-item-label">Başarı</div></div>
+  </div>
+  <div class="result-bar"><div class="result-fill" id="result-fill" style="width:0%;background:linear-gradient(90deg,var(--accent5),var(--accent))"></div></div>
+  <p id="result-msg" style="text-align:center;font-size:.9rem;color:var(--dim);margin-top:.5rem"></p>
+  <div style="text-align:center;margin-top:1rem;display:flex;gap:1rem;justify-content:center">
+    <button class="btn btn-secondary" onclick="resetQuiz()">🔄 Tekrar Dene</button>
+    <a href="index.html" class="btn btn-primary">📖 Konuları Tekrar Çalış</a>
+  </div>
+</div>
+
+<script src="style.js"></script>
+
+</body>
+</html>

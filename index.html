@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="İslam Ergün">
+<title>YMT312 — Yazılım Tasarım ve Mimarisi</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-logo">YMT312 // ÇALIŞMA KAYNAĞI</span>
+    <div class="nav-links">
+      <a href="#up">Birleşik Süreç</a>
+      <a href="#agile">Çevik</a>
+      <a href="#scrum">Scrum</a>
+      <a href="#modeller">Modeller</a>
+      <a href="#ieee">IEEE 12207</a>
+      <a href="test.html" class="test-btn">🧪 TESTE GİT</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div style="position:relative;z-index:1">
+    <span class="hero-tag">YMT312 · BÖLÜM 3 · MARDİN ARTUKLU ÜNİVERSİTESİ</span>
+    <h1>Yazılım Tasarım<br>ve Mimarisi</h1>
+    <p>Birleşik Süreç, Çevik Modeller, Scrum, IEEE/IEA 12207 — Sınava hazırlık rehberi</p>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">4</div><div class="stat-label">Ana Konu</div></div>
+      <div class="stat"><div class="stat-num">8+</div><div class="stat-label">Çevik Model</div></div>
+      <div class="stat"><div class="stat-num">13</div><div class="stat-label">Çalışma Sorusu</div></div>
+      <div class="stat"><div class="stat-num">30+</div><div class="stat-label">Test Sorusu</div></div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- ===== YAZILIM NEDİR ===== -->
+<section class="section" id="yazilim">
+  <div class="section-header">
+    <span class="section-num">00</span>
+    <h2 class="section-title">Yazılım Nedir?</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title"><span class="icon">📦</span> 5 Ana Bileşen</div>
+      <ul class="v-list">
+        <li><strong style="color:var(--accent)">Mantık (Algoritma)</strong> — İşin akıl yürütme süreci</li>
+        <li><strong style="color:var(--accent2)">Veri (Bilgi)</strong> — Ham ve işlenmiş bilgiler</li>
+        <li><strong style="color:var(--accent3)">Belge (Doküman)</strong> — Analiz, tasarım kayıtları</li>
+        <li><strong style="color:var(--accent4)">İnsan</strong> — Geliştiren ve kullanan kişiler</li>
+        <li><strong style="color:var(--accent5)">Program (Kod)</strong> — Çalıştırılabilir komutlar bütünü</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="icon">⚡</span> Yazılım vs Donanım</div>
+      <ul class="v-list">
+        <li><strong>Üretim:</strong> Donanım seri üretilir; yazılım mühendislikle geliştirilir</li>
+        <li><strong>Eskime:</strong> Donanım fiziksel eskir; yazılım ihtiyacı karşılamazsa eski sayılır</li>
+        <li><strong>Kopyalama:</strong> Donanım kopyalamak pahalı; yazılım çok kolay ve ucuz</li>
+        <li><strong>Hata Maliyeti:</strong> Geç fark edilen hata = yüksek maliyet (1→100 birim)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="diagram-wrap">
+    <div class="diagram-title">📊 Yazılım Yaşam Döngüsü — Temel Adımlar</div>
+    <div class="flow" style="justify-content:center">
+      <div class="flow-step active">Planlama</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">Analiz</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">Tasarım</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">Gerçekleştirim</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">Test</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">Bakım</div>
+      <div class="flow-arrow">↩</div>
+      <div style="font-size:.75rem;color:var(--muted);align-self:center">(döngü devam eder)</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SÜREÇ MODELLERİ ===== -->
+<section class="section" id="modeller">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2 class="section-title">Yazılım Süreç Modelleri</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Temel Yaklaşım</th>
+          <th>Avantaj</th>
+          <th>Dezavantaj</th>
+          <th>Uygun Proje</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Gelişigüzel</td>
+          <td>Doğrudan kodlama</td>
+          <td>Hızlı, az çaba</td>
+          <td>Yönetilemez, bakım zor</td>
+          <td><span class="tag tag-amber">Tek kişilik, küçük</span></td>
+        </tr>
+        <tr>
+          <td>Barok</td>
+          <td>Doğrusal, belge odaklı</td>
+          <td>Belgeleme var</td>
+          <td>Geri dönüş yok</td>
+          <td><span class="tag tag-red">1970'ler eski sistem</span></td>
+        </tr>
+        <tr>
+          <td>Çağlayan (Waterfall)</td>
+          <td>Her aşama biter→sonraki</td>
+          <td>Yönetim kolay</td>
+          <td>Değişime kapalı</td>
+          <td><span class="tag tag-blue">Net gereksinimli kısa proje</span></td>
+        </tr>
+        <tr>
+          <td>V Modeli</td>
+          <td>Üretim & test paralel</td>
+          <td>Doğrulama erken</td>
+          <td>Risk analizi yok</td>
+          <td><span class="tag tag-blue">BT/kamu ihalesi</span></td>
+        </tr>
+        <tr>
+          <td>Prototipleme</td>
+          <td>Geçici model→müşteri onayı</td>
+          <td>Gereksinimleri netleştirir</td>
+          <td>"Hızlı & kirli" risk</td>
+          <td><span class="tag tag-green">UI yoğun uygulamalar</span></td>
+        </tr>
+        <tr>
+          <td>Helezonik (Spiral)</td>
+          <td>Risk odaklı döngüler</td>
+          <td>Riskler erken giderilir</td>
+          <td>Pahalı, karmaşık</td>
+          <td><span class="tag tag-purple">Büyük kritik projeler</span></td>
+        </tr>
+        <tr>
+          <td>Evrimsel</td>
+          <td>Hızlı başlangıç→geri bildirim</td>
+          <td>Değişime uyumlu</td>
+          <td>Yapı bozulabilir</td>
+          <td><span class="tag tag-cyan">Banka uygulamaları</span></td>
+        </tr>
+        <tr>
+          <td>Artırımsal</td>
+          <td>Artan sürümler halinde</td>
+          <td>Önemli özellik erken</td>
+          <td>Uzman personel gerekli</td>
+          <td><span class="tag tag-green">Ticari yazılımlar</span></td>
+        </tr>
+        <tr>
+          <td><strong>Birleşik Süreç (UP)</strong></td>
+          <td>OO, yinelemeli+artımlı</td>
+          <td>Kalite & risk yönetimi</td>
+          <td>Karmaşık yapı</td>
+          <td><span class="tag tag-purple">Kurumsal nesne yönelimli</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="info-box">
+    <span class="info-icon">💡</span>
+    <div class="info-text"><strong>Risk Yönetimi Şampiyonu:</strong> En güçlü risk analizi içeren model <strong>Helezonik (Spiral)</strong> modeldir. Müşteri etkileşimi en yüksek olan modeller ise <strong>Prototipleme</strong> ve <strong>Çevik</strong> yaklaşımlardır.</div>
+  </div>
+
+  <div class="info-box" style="background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.3)">
+    <span class="info-icon">⚠️</span>
+    <div class="info-text"><strong style="color:#fbbf24">Sektör Gerçeği:</strong> Hocanızın notlarındaki <strong>Barok Modeli</strong> evrensel bir yazılım modeli değildir; daha çok eski Türkçe literatürde Şelale yönteminin zayıf uygulanmasını ifade eder. <strong>Kodla ve Düzelt (Code & Fix)</strong> ise yazılım mühendisliğinde bir "model" olarak değil, yapılmaması gereken bir hata (Anti-pattern) olarak kabul edilir.</div>
+  </div>
+</section>
+
+<!-- ===== BİRLEŞİK SÜREÇ ===== -->
+<section class="section" id="up">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Birleşik Süreç (Unified Process)</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="highlight">
+    <div class="highlight-title">📌 Tanım</div>
+    <p style="color:var(--dim);font-size:.9rem">Nesneye dayalı yazılım geliştirmek için var olan yöntemlerin deneyimler sonucu kabul gören en iyi özelliklerini bir araya getirerek tümleştirilmiş yazılım geliştirme sürecidir.</p>
+  </div>
+
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-title"><span class="icon">🔁</span> Yinelemeli</div>
+      <p>Problemdeki istekler bir bütün olarak değil, parça parça ele alınır. Her iterasyon sonunda çalışan bir ürün elde edilir.</p>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="icon">📈</span> Artırımsal & Evrimsel</div>
+      <p>Her iterasyon adımında yeni istekler ele alınır; ürünün özellikleri artar ve hedeflenen yazılıma yaklaşır.</p>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="icon">⚠️</span> Risk Güdümlü</div>
+      <p>İlk iterasyonlarda en riskli kısımlar ele alınır. Erken aşamada problemler görülür ve önlemler alınabilir.</p>
+    </div>
+  </div>
+
+  <!-- UP PHASES -->
+  <div class="diagram-wrap">
+    <div class="diagram-title">🗂️ Birleşik Süreç Fazları (4 Ana Aşama)</div>
+    <div class="phases">
+      <div class="phase" style="background:rgba(59,130,246,.2);color:#60a5fa">🚀<br>Başlangıç<br><small style="opacity:.7">(Inception)</small></div>
+      <div class="phase" style="background:rgba(139,92,246,.2);color:#a78bfa">🔍<br>Ayrıntı<br><small style="opacity:.7">(Elaboration)</small></div>
+      <div class="phase" style="background:rgba(16,185,129,.2);color:#34d399">⚒️<br>Yapım<br><small style="opacity:.7">(Construction)</small></div>
+      <div class="phase" style="background:rgba(245,158,11,.2);color:#fbbf24">🚢<br>Geçiş<br><small style="opacity:.7">(Transition)</small></div>
+      <div class="phase" style="background:rgba(6,182,212,.2);color:#22d3ee">🔧<br>Üretim<br><small style="opacity:.7">(Production)</small></div>
+    </div>
+
+    <div style="margin-top:1.5rem">
+      <div class="diagram-title">📊 İş Akışları (Her Fazda Farklı Yoğunlukta)</div>
+      <div style="display:grid;gap:.5rem">
+        <div style="display:flex;align-items:center;gap.5rem">
+          <div style="width:90px;font-size:.75rem;color:var(--dim);text-align:right;padding-right:.5rem">Gereksinim</div>
+          <div style="flex:1;height:14px;background:var(--bg3);border-radius:7px;overflow:hidden;display:flex">
+            <div style="width:20%;background:rgba(59,130,246,.5)"></div>
+            <div style="width:40%;background:rgba(59,130,246,.9)"></div>
+            <div style="width:20%;background:rgba(59,130,246,.4)"></div>
+            <div style="width:15%;background:rgba(59,130,246,.1)"></div>
+            <div style="width:5%;background:rgba(59,130,246,.05)"></div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center">
+          <div style="width:90px;font-size:.75rem;color:var(--dim);text-align:right;padding-right:.5rem">Tasarım</div>
+          <div style="flex:1;height:14px;background:var(--bg3);border-radius:7px;overflow:hidden;display:flex">
+            <div style="width:10%;background:rgba(139,92,246,.3)"></div>
+            <div style="width:45%;background:rgba(139,92,246,.9)"></div>
+            <div style="width:30%;background:rgba(139,92,246,.5)"></div>
+            <div style="width:10%;background:rgba(139,92,246,.15)"></div>
+            <div style="width:5%"></div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center">
+          <div style="width:90px;font-size:.75rem;color:var(--dim);text-align:right;padding-right:.5rem">Uygulama</div>
+          <div style="flex:1;height:14px;background:var(--bg3);border-radius:7px;overflow:hidden;display:flex">
+            <div style="width:5%"></div>
+            <div style="width:15%;background:rgba(16,185,129,.3)"></div>
+            <div style="width:60%;background:rgba(16,185,129,.9)"></div>
+            <div style="width:15%;background:rgba(16,185,129,.4)"></div>
+            <div style="width:5%;background:rgba(16,185,129,.1)"></div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center">
+          <div style="width:90px;font-size:.75rem;color:var(--dim);text-align:right;padding-right:.5rem">Test</div>
+          <div style="flex:1;height:14px;background:var(--bg3);border-radius:7px;overflow:hidden;display:flex">
+            <div style="width:5%"></div>
+            <div style="width:10%;background:rgba(245,158,11,.3)"></div>
+            <div style="width:50%;background:rgba(245,158,11,.8)"></div>
+            <div style="width:30%;background:rgba(245,158,11,.5)"></div>
+            <div style="width:5%;background:rgba(245,158,11,.15)"></div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center">
+          <div style="width:90px;font-size:.75rem;color:var(--dim);text-align:right;padding-right:.5rem">Destek</div>
+          <div style="flex:1;height:14px;background:var(--bg3);border-radius:7px;overflow:hidden;display:flex">
+            <div style="width:80%"></div>
+            <div style="width:20%;background:rgba(6,182,212,.7)"></div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;margin-top:.3rem">
+          <div style="width:90px"></div>
+          <div style="flex:1;display:flex">
+            <div style="flex:1;font-size:.65rem;color:var(--muted);text-align:center">#1 #2</div>
+            <div style="flex:2;font-size:.65rem;color:var(--muted);text-align:center">Tekrarlar</div>
+            <div style="flex:2;font-size:.65rem;color:var(--muted);text-align:center">...</div>
+            <div style="flex:1;font-size:.65rem;color:var(--muted);text-align:center">#n-1 #n</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="icon">✅</span> Yinelemeli Sürecin Yararları</div>
+    <div class="grid-2" style="margin-top:.5rem">
+      <ul class="v-list">
+        <li><strong>Değişen isteklere uyum</strong> — Bir sonraki iterasyonda değişiklik yapılabilir</li>
+        <li><strong>Erken geri besleme</strong> — Her iterasyondan sonra müşteriden geri bildirim alınır</li>
+        <li><strong>Büyük sistemlerde kolaylık</strong> — İstekler parça parça ele alınır</li>
+      </ul>
+      <ul class="v-list">
+        <li><strong>Deneyim kazanımı</strong> — Her yineleme adımında ekip deneyim kazanır</li>
+        <li><strong>Risklerin erken giderilmesi</strong> — Riskli kısımlar ilk iterasyonlarda ele alınır</li>
+        <li><strong>Moral yükselmesi</strong> — Her iterasyon sonunda ürün elde edilir</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p><strong>UP Önerileri:</strong> 2–6 haftalık sabit süreli iterasyonlar (ideal: 3–4 hafta). Yüksek riskli kısımlar ilk iterasyonlarda ele alınmalı. Her iterasyondan sonra tam sınama yapılmalı. UML kullanılmalı ve kullanıcılardan sürekli geri bildirim alınmalı.</p>
+  </div>
+</section>
+
+<!-- ===== ÇEVİK ===== -->
+<section class="section" id="agile">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Çevik (Agile) Yazılım Süreç Modelleri</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="info-box">
+    <span class="info-icon">📅</span>
+    <div class="info-text"><strong>Ortaya Çıkışı:</strong> 1990'larda mevcut geleneksel modellere alternatif olarak ortaya çıkmıştır. 1950'lerdeki üretim alanında geliştirilen yalın yaklaşımların yazılım sektöründeki uzantısıdır.</div>
+  </div>
+
+  <!-- MANIFESTO -->
+  <div class="diagram-wrap">
+    <div class="diagram-title">📜 Çevik Yazılım Geliştirme Manifestosu (2001)</div>
+    <div style="font-size:.78rem;color:var(--muted);margin-bottom:1rem">Kent Beck, Mike Beedle, Arie van Bennekum ve 14 diğer yazılım öncüsü tarafından yayınlandı.</div>
+    <div class="manifesto">
+      <div class="manifesto-left">🤝 Bireyler ve aralarındaki etkileşim</div>
+      <div class="manifesto-mid">›</div>
+      <div class="manifesto-right">Kullanılan araç ve süreçler</div>
+    </div>
+    <div class="manifesto">
+      <div class="manifesto-left">✅ Çalışan yazılım</div>
+      <div class="manifesto-mid">›</div>
+      <div class="manifesto-right">Detaylı dokümantasyon</div>
+    </div>
+    <div class="manifesto">
+      <div class="manifesto-left">🤝 Müşteri ile işbirliği</div>
+      <div class="manifesto-mid">›</div>
+      <div class="manifesto-right">Sözleşmedeki kesin kurallar</div>
+    </div>
+    <div class="manifesto">
+      <div class="manifesto-left">🔄 Değişikliklere uyum sağlayabilmek</div>
+      <div class="manifesto-mid">›</div>
+      <div class="manifesto-right">Mevcut planı takip etmek</div>
+    </div>
+    <div style="margin-top:1rem;font-size:.8rem;color:var(--muted);text-align:center">Sol taraf <span style="color:var(--accent)">DAHA ÖNEMLİ</span> • Sağ taraftaki değerlere de karşı değiliz, sadece sol taraf öncelikli</div>
+  </div>
+
+  <!-- 12 PRENSİP -->
+  <div class="card">
+    <div class="card-title"><span class="icon">📋</span> Çevik Manifesto — 12 Temel Prensip</div>
+    <div class="grid-2" style="margin-top:.5rem">
+      <ul class="v-list">
+        <li>Müşteriyi değerli yazılımla erken ve sürekli memnun etmek</li>
+        <li>Son anda gelse bile değişen gereksinimler hoş karşılanmalı</li>
+        <li>Çalışan yazılım en kısa sürede (2 haftadan 2 aya kadar) sunulmalı</li>
+        <li>Geliştiriciler ve iş insanları proje boyunca beraber çalışmalı</li>
+        <li>Projeler motive bireyler çevresinde geliştirilmeli</li>
+        <li>En iyi iletişim yüz yüzedir</li>
+      </ul>
+      <ul class="v-list">
+        <li>İlerlemenin en iyi göstergesi çalışan yazılımdır</li>
+        <li>Çevik süreçler sürdürülebilir geliştirme sağlar</li>
+        <li>Teknik mükemmellik ve iyi tasarım çevikliği artırır</li>
+        <li>Basitlik önemlidir — yapılmaması gereken işleri önlemek</li>
+        <li>En iyi tasarımlar kendi kendine organize ekiplerden çıkar</li>
+        <li>Takımlar düzenli aralıklarla davranışlarını düzenler</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- NEDEN KULLANILIR -->
+  <div class="card" style="margin-top:1rem">
+    <div class="card-title"><span class="icon">🎯</span> Hangi Durumlarda Kullanılır?</div>
+    <div class="grid-2">
+      <ul class="v-list">
+        <li>Müşteriden gelebilecek talep değişiklikleri tahmin edilemez</li>
+        <li>Önce tasarlanıp hemen geliştirilmesi gereken projeler</li>
+      </ul>
+      <ul class="v-list">
+        <li>Süreçlerin ne kadar süreceği önceden bilinemiyor</li>
+        <li>Takım hiyerarşisiz, iletişim odaklı çalışma kültürüne sahip</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FARK -->
+  <div class="highlight" style="margin-top:1rem">
+    <div class="highlight-title">⚡ Çevik vs Diğer Yinelemeli Modeller</div>
+    <p style="color:var(--dim);font-size:.88rem">Diğer yinelemeli modellerin zaman dilimi <strong style="color:var(--text)">ay</strong> olarak alınırken, çevik modellerde bu süre <strong style="color:var(--accent)">haftaya</strong> kadar düşer. Bu kısa süre içinde küçük ilerlemeler şeklinde, her adımda müşteriden geri bildirim alınarak yazılım ortaya çıkarılır.</p>
+  </div>
+
+  <!-- ÇEVİK SÜREÇ DİYAGRAMI -->
+  <div class="diagram-wrap" style="margin-top:1rem">
+    <div class="diagram-title">🔄 Çevik Yazılım Geliştirme Süreci</div>
+    <div class="flow" style="justify-content:center;flex-wrap:wrap">
+      <div class="flow-step active">1. Gereksinimleri<br>Tanımla</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">2. İlk<br>Tahminler</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">3. Üst Düzey<br>Planlama</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">4. İterasyon<br>Başlat</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">5. Hikaye &<br>Senaryo</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">6. Fonk. &<br>Kabul Testleri</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">7. Deploy</div>
+    </div>
+    <div class="flow" style="justify-content:center;margin-top:.75rem">
+      <div class="flow-step">8. Kalite<br>Güvencesi</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">9. Daha Fazla<br>Geliştirme?</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--accent5);color:var(--accent5)">10. Sistem<br>Testi</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--accent4);color:var(--accent4)">🚀 RELEASE</div>
+    </div>
+  </div>
+
+  <!-- ÇEVİK MODELLER LİSTESİ -->
+  <div class="card" style="margin-top:1rem">
+    <div class="card-title"><span class="icon">📚</span> Başlıca Çevik Yazılım Geliştirme Modelleri</div>
+    <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem">
+      <span class="tag tag-blue">XP (Extreme Programming)</span>
+      <span class="tag tag-purple">ASD (Adaptive Software Dev.)</span>
+      <span class="tag tag-green">DSDM (Dynamic System Dev.)</span>
+      <span class="tag tag-amber">SCRUM</span>
+      <span class="tag tag-cyan">CRYSTAL</span>
+      <span class="tag tag-red">FDD (Feature-Driven Dev.)</span>
+      <span class="tag tag-blue">AUP (Agile Unified Process)</span>
+      <span class="tag tag-purple">Agile Data Method</span>
+    </div>
+  </div>
+
+  <div class="info-box" style="background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.3);margin-top:1rem">
+    <span class="info-icon">⚠️</span>
+    <div class="info-text"><strong style="color:#fbbf24">Sektör Gerçeği:</strong> 1950'lerdeki üretim felsefesi (Lean) ile Agile prensipleri birbirine yakın olsa da, Agile spesifik olarak farklı dinamiklerle 90'larda yazılım dünyası sınırlarında çıkmıştır. Ayrıca listede bulunan <strong>AUP (Agile Unified Process)</strong> güncel endüstride artık <strong style="color:var(--text)">kullanımdan tamamen kalkmıştır</strong>.</div>
+  </div>
+</section>
+
+<!-- ===== XP ===== -->
+<section class="section" id="xp">
+  <div class="section-header">
+    <span class="section-num">03a</span>
+    <h2 class="section-title">Uçdeğer Programlama (XP)</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title"><span class="icon">🏷️</span> Temel Bilgiler</div>
+      <ul class="v-list">
+        <li><strong>Kim:</strong> Kent Beck tarafından <strong>1999</strong> yılında ortaya çıkarıldı</li>
+        <li><strong>Ne:</strong> Yazılım geliştirme disiplini</li>
+        <li><strong>Gereksinimler:</strong> Senaryolar şeklinde oluşturulur, sonra işlere bölünür</li>
+        <li><strong>Takım:</strong> Yazılımcılar çiftler halinde çalışır (pair programming)</li>
+        <li><strong>Müşteri:</strong> Geliştirici takımın devamlı bir parçasıdır</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="icon">🧱</span> 4 Temel Prensip</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:.5rem">
+        <div style="background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);border-radius:8px;padding:.75rem;text-align:center">
+          <div style="font-size:1.5rem">🧩</div>
+          <div style="font-weight:700;color:var(--accent);font-size:.9rem">Basitlik</div>
+        </div>
+        <div style="background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);border-radius:8px;padding:.75rem;text-align:center">
+          <div style="font-size:1.5rem">💬</div>
+          <div style="font-weight:700;color:var(--accent5);font-size:.9rem">İletişim</div>
+        </div>
+        <div style="background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.2);border-radius:8px;padding:.75rem;text-align:center">
+          <div style="font-size:1.5rem">🔄</div>
+          <div style="font-weight:700;color:var(--accent3);font-size:.9rem">Geri Bildirim</div>
+        </div>
+        <div style="background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.2);border-radius:8px;padding:.75rem;text-align:center">
+          <div style="font-size:1.5rem">💪</div>
+          <div style="font-weight:700;color:var(--accent4);font-size:.9rem">Cesaret</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:1rem">
+    <div class="card-title"><span class="icon">⚙️</span> XP'nin 12 Temel Pratiği</div>
+    <div class="xp-grid">
+      <div class="xp-item"><div class="xp-num">1</div><div class="xp-text">Planlama Oyunu</div></div>
+      <div class="xp-item"><div class="xp-num">2</div><div class="xp-text">Kısa Aralıklı Sürümler</div></div>
+      <div class="xp-item"><div class="xp-num">3</div><div class="xp-text">Müşteri Katılımı</div></div>
+      <div class="xp-item"><div class="xp-num">4</div><div class="xp-text">Refactoring</div></div>
+      <div class="xp-item"><div class="xp-num">5</div><div class="xp-text">Önce Test (Test First)</div></div>
+      <div class="xp-item"><div class="xp-num">6</div><div class="xp-text">Ortak Kod Sahiplenme</div></div>
+      <div class="xp-item"><div class="xp-num">7</div><div class="xp-text">Basit Tasarım</div></div>
+      <div class="xp-item"><div class="xp-num">8</div><div class="xp-text">Metafor</div></div>
+      <div class="xp-item"><div class="xp-num">9</div><div class="xp-text">Pair Programming</div></div>
+      <div class="xp-item"><div class="xp-num">10</div><div class="xp-text">Kodlama Standardı</div></div>
+      <div class="xp-item"><div class="xp-num">11</div><div class="xp-text">Sürekli Entegrasyon</div></div>
+      <div class="xp-item"><div class="xp-num">12</div><div class="xp-text">Haftada 40 Saat</div></div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p><strong>XP Ne Zaman Kullanılır?</strong> Küçük ve orta ölçekli projelerde, kullanıcı gereksinimleri belirsiz ya da değişkense kullanışlıdır. Özelleşme yoktur; herkes her aşamada görev alır.</p>
+  </div>
+</section>
+
+<!-- ===== ASD & DSDM ===== -->
+<section class="section" id="asd-dsdm">
+  <div class="section-header">
+    <span class="section-num">03b</span>
+    <h2 class="section-title">ASD & DSDM</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title"><span class="icon">🔮</span> Adaptif Yazılım Geliştirme (ASD)</div>
+      <p style="font-size:.82rem;color:var(--muted);margin-bottom:.75rem">Jim Highsmith tarafından önerilmiştir</p>
+      <ul class="v-list">
+        <li>Göreve-dayalı planlama</li>
+        <li>Bileşene-dayalı odak</li>
+        <li>"Zaman aralıkları" kullanır</li>
+        <li>Riskleri açık şekilde göz önünde bulundurur</li>
+        <li>İşbirliği ve "öğrenme"yi vurgular</li>
+      </ul>
+      <div class="diagram-wrap" style="margin-top:1rem;padding:1rem">
+        <div class="flow" style="justify-content:center">
+          <div class="flow-step active" style="border-color:var(--accent3);color:var(--accent3)">Kurgu<br>(Speculation)</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step active" style="border-color:var(--accent5);color:var(--accent5)">İşbirliği<br>(Collab.)</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step active" style="border-color:var(--accent4);color:var(--accent4)">Öğrenme<br>(Learning)</div>
+          <div class="flow-arrow">↩</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="icon">⚡</span> Dinamik Sistem Geliştirme (DSDM)</div>
+      <p style="font-size:.82rem;color:var(--muted);margin-bottom:.75rem">DSDM Konsorsiyumu tarafından önerilmiştir (www.dsdm.org)</p>
+      <p style="font-size:.82rem;color:var(--dim);margin-bottom:.75rem">9 yönlendirici prensip · 7 aşamalı proje yapısı</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.4rem">
+        <div style="background:var(--bg3);border-radius:6px;padding:.5rem;font-size:.75rem;color:var(--dim)">1. Ön Proje</div>
+        <div style="background:var(--bg3);border-radius:6px;padding:.5rem;font-size:.75rem;color:var(--dim)">2. Fizibilite Çalışması</div>
+        <div style="background:var(--bg3);border-radius:6px;padding:.5rem;font-size:.75rem;color:var(--dim)">3. İş Çalışması</div>
+        <div style="background:var(--bg3);border-radius:6px;padding:.5rem;font-size:.75rem;color:var(--dim)">4. Fonks. Model Yineleme</div>
+        <div style="background:var(--bg3);border-radius:6px;padding:.5rem;font-size:.75rem;color:var(--dim)">5. Tasarım & Yapı Yineleme</div>
+        <div style="background:var(--bg3);border-radius:6px;padding:.5rem;font-size:.75rem;color:var(--dim)">6. Uygulama</div>
+        <div style="background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);border-radius:6px;padding:.5rem;font-size:.75rem;color:var(--accent)">7. Proje Sonrası</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SCRUM ===== -->
+<section class="section" id="scrum">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Scrum</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title"><span class="icon">📋</span> Temel Bilgiler</div>
+      <ul class="v-list">
+        <li><strong>Kim:</strong> Jeff Sutherland ve Ken Schwaber (1990'ların ortaları)</li>
+        <li><strong>Odak:</strong> Proje yönetimi ve planlama (mühendislik detayları yok)</li>
+        <li><strong>Sprint:</strong> Her iterasyon (yineleme) max 30 gün</li>
+        <li><strong>Toplantı:</strong> Günlük 15 dakikalık stand-up</li>
+        <li><strong>Ekip Boyutu:</strong> &lt; 20 kişi</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="icon">🎭</span> Scrum Rolleri</div>
+      <ul class="v-list">
+        <li><strong style="color:var(--accent)">Product Owner</strong> — Ürün backlog'undan ve değerinden sorumlu</li>
+        <li><strong style="color:var(--accent3)">Scrum Master</strong> — Scrum kurallarını uygulayan lider; engelleri kaldırır</li>
+        <li><strong style="color:var(--accent5)">Geliştirme Ekibi</strong> — Kendi kendini organize eden çapraz fonksiyonel ekip</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SCRUM SPRINT DİYAGRAMI -->
+  <div class="diagram-wrap">
+    <div class="diagram-title">🔄 Scrum Sprint Döngüsü</div>
+    <div style="display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;flex-wrap:wrap">
+      <div style="text-align:center">
+        <div style="background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.25);border-radius:10px;padding:1rem;min-width:130px">
+          <div style="font-size:1.5rem">📋</div>
+          <div style="font-weight:700;color:#f87171;font-size:.85rem">Product Backlog</div>
+          <div style="font-size:.72rem;color:var(--muted);margin-top:.3rem">Öncelikli gereksinim listesi</div>
+        </div>
+        <div style="margin-top:.5rem;font-size:.75rem;color:var(--muted)">Sprint Planning<br>(1 gün)</div>
+      </div>
+      <div>
+        <div style="background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.2);border-radius:12px;padding:1.2rem">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem">
+            <span style="font-weight:700;color:var(--accent);font-size:.85rem">🏃 SPRINT (2–4 Hafta)</span>
+            <span style="font-size:.75rem;color:var(--muted)">Daily Scrum: 15 dk</span>
+          </div>
+          <div class="sprint-cycle">
+            <div class="sprint-step" style="border-top:3px solid #60a5fa">
+              <div class="sprint-step-num" style="color:#60a5fa">📊</div>
+              <div class="sprint-step-label">Analysis<br>Design<br>Build</div>
+            </div>
+            <div class="sprint-step" style="border-top:3px solid #a78bfa">
+              <div class="sprint-step-num" style="color:#a78bfa">🧪</div>
+              <div class="sprint-step-label">Testing</div>
+            </div>
+            <div class="sprint-step" style="border-top:3px solid #34d399">
+              <div class="sprint-step-num" style="color:#34d399">🚀</div>
+              <div class="sprint-step-label">Deploy</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.75rem">
+            <div style="background:var(--bg3);border-radius:6px;padding:.5rem;font-size:.75rem;text-align:center;color:var(--dim)">Sprint Review (2–4 saat)</div>
+            <div style="background:var(--bg3);border-radius:6px;padding:.5rem;font-size:.75rem;text-align:center;color:var(--dim)">Sprint Retrospective (1–3 saat)</div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center">
+        <div style="background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);border-radius:10px;padding:1rem;min-width:130px">
+          <div style="font-size:1.5rem">📦</div>
+          <div style="font-weight:700;color:#34d399;font-size:.85rem">Potentially Shippable Increment</div>
+          <div style="font-size:.72rem;color:var(--muted);margin-top:.3rem">Teslim edilebilir ürün parçası</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRUM KAVRAMLARI -->
+  <div class="grid-3" style="margin-top:1rem">
+    <div class="card">
+      <div class="card-title"><span class="icon">📦</span> Product Backlog</div>
+      <p>Müşterinin istediği tüm gereksinimlerin listesi. En önemlisinden en aza sıralanır. Product Owner sorumludur.</p>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="icon">🏃</span> Sprint Backlog</div>
+      <p>Product Backlog'dan seçilen sprint için gereksinimler. Sprint boyunca bu gereksinimler geliştirilir.</p>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="icon">📅</span> Daily Scrum</div>
+      <p>Günlük 15 dk toplantı. 3 soru: Dün ne yaptım? Bugün ne yapacağım? Engellerim neler?</p>
+    </div>
+  </div>
+
+  <div class="info-box" style="background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.3);margin-top:1rem">
+    <span class="info-icon">⚠️</span>
+    <div class="info-text"><strong style="color:#fbbf24">Sektör Gerçeği:</strong> Derste sınav için "Sprint en fazla 30 gün sürer" bilgisini bilmeniz istense de, <strong>modern yazılım sektöründe standart Sprint süresi kesin olarak 2 Haftadır (14 Gün)</strong>. 30 günlük sprintler günümüzde neredeyse hiç kullanılmaz.</div>
+  </div>
+
+  <!-- SCRUM ÖRNEK -->
+  <div class="callout" style="margin-top:1rem">
+    <p><strong>Gerçek Örnek:</strong> Kredi Kartı Taahhüt Programı projesi — İş birliği ile 8 ay olarak planlanan proje, 3'er haftalık <strong>6 Sprint</strong> ile <strong>18 haftada</strong> tamamlandı!</p>
+  </div>
+</section>
+
+<!-- ===== FDD & AUP ===== -->
+<section class="section" id="fdd-aup">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <h2 class="section-title">FDD & Çevik Tümleşik Süreç (AUP)</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title"><span class="icon">🏗️</span> Özellik Güdümlü Geliştirme (FDD)</div>
+      <p style="font-size:.82rem;color:var(--muted);margin-bottom:.75rem">Jeff De Luca ve Peter Coad — 1997</p>
+      <p style="font-size:.85rem;color:var(--dim);margin-bottom:.75rem">Özellik tabanlı gerçekleştirimi esas alır. Sisteme yeni özellik kazandırılmadan önce detaylı tasarım yapılır.</p>
+      <div style="display:flex;flex-direction:column;gap:.4rem">
+        <div class="flow-step" style="text-align:left">1️⃣ Genel sistem modelinin geliştirilmesi</div>
+        <div class="flow-step" style="text-align:left">2️⃣ Özellik listesinin oluşturulması</div>
+        <div class="flow-step" style="text-align:left">3️⃣ Özellik güdümlü planlama</div>
+        <div class="flow-step" style="text-align:left">4️⃣ Özellik güdümlü tasarım</div>
+        <div class="flow-step" style="text-align:left;border-color:var(--accent5);color:var(--accent5)">5️⃣ Özellik güdümlü geliştirme</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="icon">🔄</span> Çevik Tümleşik Süreç (AUP)</div>
+      <p style="font-size:.82rem;color:var(--muted);margin-bottom:.75rem">Rational Unified Process (RUP)'un basitleştirilmiş hali</p>
+      <ul class="v-list">
+        <li>Test-güdümlü geliştirme (TDD) uygular</li>
+        <li>Çevik değişiklik yönetimi</li>
+        <li>Veritabanı yeniden yapılandırma</li>
+        <li>RUP'dan farklı olarak <strong>7 disiplin</strong> içerir</li>
+      </ul>
+      <div style="background:var(--bg3);border-radius:8px;padding:.75rem;margin-top:.75rem;font-size:.8rem;color:var(--dim)">
+        <strong style="color:var(--accent)">4 Faz:</strong> Inception → Elaboration → Construction → Transition
+        <br><br>
+        <strong style="color:var(--accent)">7 Disiplin:</strong> Model, Implementation, Test, Deployment, Configuration Mgmt, Project Mgmt, Environment
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== IEEE 12207 ===== -->
+<section class="section" id="ieee">
+  <div class="section-header">
+    <span class="section-num">06</span>
+    <h2 class="section-title">IEEE/IEA 12207 Yazılım Yaşam Döngüsü</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="highlight">
+    <div class="highlight-title">📌 Nedir?</div>
+    <p style="color:var(--dim);font-size:.9rem">Bilgi Teknolojileri — Yazılım Yaşam Döngüsü Süreçleri için <strong style="color:var(--text)">Uluslararası Standart</strong>. Kavramsal fikrin ortaya çıkışından yazılımın emekli oluşuna kadar tüm yaşam döngüsünü kapsayan süreçler kümesini tanımlar.</p>
+  </div>
+
+  <div class="grid-2" style="margin-top:1rem">
+    <div class="card">
+      <div class="card-title"><span class="icon">✅</span> 12207 NEDİR?</div>
+      <ul class="v-list">
+        <li>Yazılım süreç modelleri için <strong>ortak bir çerçeve</strong></li>
+        <li>Organizasyonlar kendi kullanımı için adapte edebilir</li>
+        <li>Projeye göre uyarlanabilir</li>
+        <li>Genel, büyük ve karmaşık projeler için tasarlandı</li>
+        <li>Uygulamalar için bir <strong>kılavuz</strong></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="icon">❌</span> 12207 NE DEĞİLDİR?</div>
+      <ul class="v-list">
+        <li>Yazılım geliştirme için <strong>bir reçete değil</strong></li>
+        <li>Yönetim ya da mühendisliğin <strong>yerine geçmez</strong></li>
+        <li>Ürün ya da ölçme standardı <strong>değildir</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ieee-grid" style="margin-top:1rem">
+    <div class="ieee-box primary">
+      <div class="ieee-box-title">Primary Processes (Birincil)</div>
+      <div class="ieee-item">Acquisition (Kazanma)</div>
+      <div class="ieee-item">Supply (Tedarik)</div>
+      <div class="ieee-item">Development (Geliştirme)</div>
+      <div class="ieee-item">Operation (İşletim)</div>
+      <div class="ieee-item">Maintenance (Bakım)</div>
+    </div>
+    <div class="ieee-box support">
+      <div class="ieee-box-title">Supporting Processes (Destekleyici)</div>
+      <div class="ieee-item">Documentation</div>
+      <div class="ieee-item">Configuration Management</div>
+      <div class="ieee-item">Quality Assurance</div>
+      <div class="ieee-item">Verification</div>
+      <div class="ieee-item">Validation</div>
+      <div class="ieee-item">Joint Review</div>
+      <div class="ieee-item">Audit</div>
+      <div class="ieee-item">Problem Resolution</div>
+    </div>
+    <div class="ieee-box org">
+      <div class="ieee-box-title">Organizational Processes (Kurumsal)</div>
+      <div class="ieee-item">Management</div>
+      <div class="ieee-item">Infrastructure</div>
+      <div class="ieee-item">Improvement</div>
+      <div class="ieee-item">Training</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ÖZET TABLO ===== -->
+<section class="section" id="ozet">
+  <div class="section-header">
+    <span class="section-num">07</span>
+    <h2 class="section-title">Hızlı Özet — Sınav İçin</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card" style="border-color:rgba(59,130,246,.4)">
+      <div class="card-title"><span class="icon">🔑</span> Anahtar Tarihler ve İsimler</div>
+      <ul class="v-list">
+        <li><strong>2001</strong> — Çevik Manifesto yayınlandı</li>
+        <li><strong>1999</strong> — XP, Kent Beck tarafından ortaya çıkarıldı</li>
+        <li><strong>1997</strong> — FDD, Jeff De Luca ve Peter Coad tarafından geliştirildi</li>
+        <li><strong>1990'lar</strong> — Scrum, Jeff Sutherland ve Ken Schwaber</li>
+        <li><strong>ASD</strong> — Jim Highsmith tarafından önerildi</li>
+        <li><strong>DSDM</strong> — DSDM Konsorsiyumu (www.dsdm.org)</li>
+        <li><strong>Çevik Modelleme</strong> — Scott Ambler tarafından önerildi</li>
+      </ul>
+    </div>
+    <div class="card" style="border-color:rgba(139,92,246,.4)">
+      <div class="card-title"><span class="icon">⚡</span> Kritik Sayılar</div>
+      <ul class="v-list">
+        <li>UP iterasyon süresi: <strong>2–6 hafta</strong> (ideal: 3–4 hafta)</li>
+        <li>UP fazları: <strong>4 (+ üretim)</strong> aşama</li>
+        <li>XP pratiği: <strong>12</strong> temel pratik</li>
+        <li>XP prensibi: <strong>4</strong> (Basitlik, İletişim, Geri Bildirim, Cesaret)</li>
+        <li>DSDM aşamaları: <strong>7</strong></li>
+        <li>Scrum sprint süresi: Max <strong>30 gün</strong></li>
+        <li>Daily Scrum: <strong>15 dakika</strong></li>
+        <li>Scrum ekip boyutu: <strong>&lt;20 kişi</strong></li>
+        <li>FDD adımları: <strong>5</strong></li>
+        <li>AUP disiplinleri: <strong>7</strong></li>
+        <li>Çevik Manifesto prensibi: <strong>12</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:1rem">
+    <p><strong>Süreç Mimarı:</strong> Hangi modelin ve model içindeki hangi adımların gerçekleştirileceğini seçmekle görevli olan kişiye "süreç mimarı" denir. Her modelin güçlü ve zayıf yanlarını değerlendirerek proje için en iyi modeli seçer.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>YMT312 Yazılım Tasarım ve Mimarisi — Mardin Artuklu Üniversitesi Bilgisayar Programcılığı</p>
+  <p style="margin-top:.5rem">Kaynak: Doç. Dr. Resul DAŞ, Fırat Üniversitesi Yazılım Mühendisliği &nbsp;|&nbsp; <a href="test.html">🧪 Test Sayfasına Git</a></p>
+</footer>
+
+</body>
+</html>
